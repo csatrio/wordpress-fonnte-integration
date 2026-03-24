@@ -1,0 +1,88 @@
+# IDE & Editor Files
+.vscode/
+.idea/
+.sublime-project
+.sublime-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+.env.local
+.env.*.local
+
+# PhpStorm
+.idea/
+*.iml
+*.iws
+*.ipr
+.phpstorm.meta.php
+_ide_helper.php
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# PHP
+composer.lock
+vendor/
+.php_cs.cache
+.phpunit.result.cache
+
+# WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/backup-*
+wp-content/upgrade/
+wp-content/cache/
+wp-content/plugins/
+!wp-content/plugins/fonnte-wa.php
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+wp-content/debug.log
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Node (if using build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+.npm/
+
+# OS Generated Files
+.gitkeep
+.keep
