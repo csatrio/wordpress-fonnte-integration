@@ -32,19 +32,20 @@ function send_to_fonnte_api($target, $message)
 /**
  * Helper function untuk mencari Form ID berdasarkan nama form.
  */
-function get_form_id_by_name($form_name)
+
+function get_form_id_by_name($target_name)
 {
     $forms = GFAPI::get_forms();
-
     foreach ($forms as $form) {
-        if (trim(strtolower($form['title'])) === trim(strtolower($form_name))) {
+        // We trim AND lowercase BOTH sides to ensure a match
+        // even if someone was "sloppy" with the keyboard.
+        if (trim(strtolower(rgar($form, 'title'))) === trim(strtolower($target_name))) {
             return $form['id'];
         }
     }
-
-    error_log("Form dengan nama '{$form_name}' tidak ditemukan!");
-    return null;
+    return false;
 }
+
 
 /**
  * Helper function untuk mengambil data Gravity Forms berdasarkan labelnya
@@ -61,7 +62,7 @@ function get_val_by_label($entry, $form, $target_label)
             return rgar($entry, (string) $field->id);
         }
     }
-    error_log("Memproses Form: " . $form_title);
+    error_log("Memproses Form: " . $rgar($form, 'title') .''. $target_label);
     error_log("Field: " . $target_label . " tidak ditemukan!");
     return '';
 }
