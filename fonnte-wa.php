@@ -172,7 +172,7 @@ function process_wa_daily_drip($form_name = 'User Registration')
         $message = get_drip_message_template($days_diff, $name);
 
         // Kirim ke Fonnte
-        dispatch_wa_to_fonnte($phone, $message);
+        send_to_fonnte_api($phone, $message);
 
         // 4. PERBARUI STATE: Catat bahwa kami mengirim Hari X
         gform_update_meta($entry_id, 'wa_drip_last_sent_day', $days_diff);
